@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHttp } from '../util/customHooks';
 
-import {getAPI} from '../../util/util'
+import {getAPI} from '../util/util'
 
 export default function PeopleSelect({personId, handleChange}) {
     
