@@ -8,6 +8,7 @@ export const useHttp = (url, initialValue) => {
           const fetchData = async (url) => {
             try {
               let res = await axios.get(url);
+              debugger
               setData(res.data);
               setIsLoading(false);
             } catch (err) {

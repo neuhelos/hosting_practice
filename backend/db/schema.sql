@@ -1,7 +1,6 @@
-DROP DATABASE IF EXISTS broken_project;
-CREATE DATABASE broken_project; 
-
-\c broken_project; 
+-- DROP DATABASE IF EXISTS broken_project; //Don't need with Heroku (Heroku is providing database - drop/create)
+-- CREATE DATABASE broken_project; //Don't need with Heroku
+-- \c broken_project; // Don't need with Heroku
 
 
 DROP TABLE IF EXISTS users;
