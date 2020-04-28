@@ -2,9 +2,13 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import Car from "./Car";
 
+import {getAPI} from '../../util/util'
+
 export default function CarIndex({ personId }) {
     const [isLoading, setIsLoading] = useState(false);
     const [cars, setCars] = useState([]);
+
+    const API = getAPI()
 
       useEffect(() => {
         const fetchData = async (url) => {
@@ -19,7 +23,7 @@ export default function CarIndex({ personId }) {
             console.log(err);
           }
         };
-        const url = personId === 0 ? "/cars" : `/users/${personId}/cars`
+        const url = Number(personId) === 0 ? `${API}/cars` : `${API}/users/${personId}/cars`
           fetchData(url);
         // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [personId]);

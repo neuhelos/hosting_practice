@@ -1,8 +1,13 @@
 import React from 'react';
 import { useHttp } from '../util/customHooks';
 
+import {getAPI} from '../../util/util'
+
 export default function PeopleSelect({personId, handleChange}) {
-    const [ data, isLoading] = useHttp("/users")
+    
+    const API = getAPI()
+
+    const [ data, isLoading] = useHttp(`${API}/users`)
     if(isLoading) return null; 
     return(
         <select value={personId} onChange={handleChange}>

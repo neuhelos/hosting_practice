@@ -1,0 +1,1 @@
+export const getAPI = () => window.location.hostname === 'localhost' ? 'http://localhost:3001' : 'https://nilber-hostingservice-demo.herokuapp.com/'
